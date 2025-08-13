@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Student Needs</title>
+<style>
+  :root{
+    --brand:#2563eb;        /* primary blue */
+    --brand-2:#1e40af;      /* darker blue */
+    --accent:#f59e0b;       /* amber */
+    --bg:#0b1220;           /* hero overlay */
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;color:#1f2937}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:#fff;border-bottom:1px solid #e5e7eb;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;padding:14px 0;
+  }
+  .logo{font-weight:800;font-size:1.2rem;letter-spacing:.3px}
+  .logo span{color:var(--brand)}
+  .links{display:flex;gap:16px}
+  .links a{padding:8px 10px;border-radius:8px}
+  .links a:hover{background:#f3f4f6}
+
+  /* Hero */
+  .hero{
+    background:
+      linear-gradient(to bottom, rgba(11,18,32,.6), rgba(11,18,32,.6)),
+      url('https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    color:#fff;text-align:center;padding:72px 18px 80px;
+  }
+  .hero h1{font-size:2.2rem;margin:0 0 8px;font-weight:800}
+  .hero p{opacity:.95;margin:0 0 20px}
+  .btn{
+    display:inline-block;background:var(--accent);color:#111;
+    padding:10px 16px;border-radius:10px;font-weight:700;transition:.25s;
+  }
+  .btn:hover{transform:translateY(-2px)}
+
+  /* Products */
+  section#products{padding:36px 0}
+  h2{font-size:1.6rem;margin:0 0 18px}
+  .grid{
+    display:grid;gap:14px;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  }
+  .card{
+    background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(2,6,23,.10)}
+  .card img{height:160px;object-fit:cover}
+  .card .body{padding:12px 12px 14px}
+  .title{font-weight:700;margin:2px 0}
+  .desc{font-size:.93rem;color:#6b7280;margin:6px 0 10px}
+  .meta{display:flex;align-items:center;justify-content:space-between}
+  .price{font-weight:800;color:var(--brand-2)}
+  .add{border:0;background:var(--brand);color:#fff;padding:8px 10px;border-radius:9px;font-weight:700;cursor:pointer}
+  .add:hover{background:var(--brand-2)}
+
+  /* Footer */
+  footer{border-top:1px solid #e5e7eb;background:#fafafa;color:#6b7280}
+  footer .inner{padding:18px 0;text-align:center;font-size:.95rem}
+
+  /* Small screens: stack header links under logo if needed (optional simple toggle-free) */
+  @media (max-width:520px){
+    .links{gap:8px}
+    .hero h1{font-size:1.8rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">Student<span>Needs</span></div>
+    <nav class="links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <h1>Your daily study essentials, all in one place.</h1>
+    <p>Affordable stationery for school, college, and competitive prep.</p>
+    <a class="btn" href="#products">Browse Items</a>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <h2>Popular Stationery</h2>
+      <div class="grid">
+
+        <!-- Pen -->
+        <article class="card">
+          <img src="https://media.istockphoto.com/id/654244166/photo/pens-collection-isolated-on-white-pens-isolated.jpg?s=612x612&w=0&k=20&c=c8rNMIZvKbbS0m06WArLe7Nd9qimwLp7vtFJPP8II9Y=" alt="Blue ball pen">
+          <div class="body">
+            <div class="title">Pen</div>
+            <p class="desc">Smooth-writing ball pen, 0.7mm tip.</p>
+            <div class="meta">
+              <span class="price">₹10</span>
+              <button class="add" onclick="added('Pen')">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pencil -->
+        <article class="card">
+          <img src="https://topperskit.com/cdn/shop/files/13_0ef9187d-547e-4896-b4cb-cb2dff0cd30f.jpg?v=1706183962&width=1445" alt="HB pencils">
+          <div class="body">
+            <div class="title">Pencil</div>
+            <p class="desc">HB wooden pencil for notes & sketches.</p>
+            <div class="meta">
+              <span class="price">₹5</span>
+              <button class="add" onclick="added('Pencil')">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Eraser -->
+        <article class="card">
+          <img src="https://topperskit.com/cdn/shop/files/4_a71803c0-c216-477a-97fc-a996f22952a9.jpg?v=1706106188" alt="White eraser">
+          <div class="body">
+            <div class="title">Eraser</div>
+            <p class="desc">Latex-free eraser, clean rub, no smudge.</p>
+            <div class="meta">
+              <span class="price">₹8</span>
+              <button class="add" onclick="added('Eraser')">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- A4 Sheets -->
+        <article class="card">
+          <img src="https://www.eshwarshop.com/cdn/shop/products/a4-size-paper-500x500_e72f1e24-12a9-4de3-9d2e-3d1a6efdbcc2.jpg?v=1610017808" alt="A4 paper stack">
+          <div class="body">
+            <div class="title">A4 Sheets (100)</div>
+            <p class="desc">80 GSM white sheets for printing & notes.</p>
+            <div class="meta">
+              <span class="price">₹120</span>
+              <button class="add" onclick="added('A4 Sheets')">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Record Sheets -->
+        <article class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgnGbasI9XiWZSXxeO-hukHaKDjxLC1PkGGFderID9TYfFFM4aMAA8UUXHUyVpT3OXPiE&usqp=CAU" alt="Record sheets / ruled">
+          <div class="body">
+            <div class="title">Record Sheets (Pack)</div>
+            <p class="desc">Ruled sheets for lab records and assignments.</p>
+            <div class="meta">
+              <span class="price">₹60</span>
+              <button class="add" onclick="added('Record Sheets')">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Scale -->
+        <article class="card">
+          <img src="https://m.media-amazon.com/images/I/31uGrCZaSnL._UF1000,1000_QL80_.jpg" alt="Transparent ruler scale">
+          <div class="body">
+            <div class="title">Scale (30 cm)</div>
+            <p class="desc">Transparent ruler with clear markings.</p>
+            <div class="meta">
+              <span class="price">₹15</span>
+              <button class="add" onclick="added('Scale')">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Calculator -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?q=80&w=1200&auto=format&fit=crop" alt="Scientific calculator">
+          <div class="body">
+            <div class="title">Calculator</div>
+            <p class="desc">Basic scientific calculator for exams.</p>
+            <div class="meta">
+              <span class="price">₹499</span>
+              <button class="add" onclick="added('Calculator')">Add</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap" style="padding:10px 0 40px;">
+      <h2>Contact</h2>
+      <p style="color:#6b7280;margin:4px 0 14px">Have a bulk order or custom request? Send us a message.</p>
+      <form onsubmit="event.preventDefault(); alert('Thanks! We will contact you soon.');" style="display:grid;gap:10px;max-width:520px">
+        <input required placeholder="Your Name" style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px">
+        <input type="email" required placeholder="Email" style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px">
+        <textarea required placeholder="Message" rows="4" style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px"></textarea>
+        <button class="btn" style="border:0">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap inner">© 2025 Student Needs. All rights reserved.</div>
+</footer>
+
+<script>
+  function added(item){ alert(item + ' added! (Demo)'); }
+</script>
+
+</body>
+</html>
